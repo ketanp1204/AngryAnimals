@@ -26,13 +26,13 @@ script = ExtResource("1_j2udj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(575, 12)
+position = Vector2(575, 48)
 texture = ExtResource("1_d6ha4")
 region_enabled = true
 region_rect = Rect2(0, 0, 1200, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(574, 57.5)
+position = Vector2(574, 37)
 shape = SubResource("RectangleShape2D_7665n")
 
 [node name="Splash" type="AudioStreamPlayer2D" parent="."]
