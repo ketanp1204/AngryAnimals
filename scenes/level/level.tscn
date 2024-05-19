@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjlsic1gwgfil"]
+[gd_scene load_steps=6 format=3 uid="uid://cjlsic1gwgfil"]
 
 [ext_resource type="Texture2D" uid="uid://bmklatcs8qb7w" path="res://assets/scene/colored_castle.png" id="1_4ibaf"]
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_f431u"]
 [ext_resource type="PackedScene" uid="uid://bl4s3a1jitdw3" path="res://scenes/water/water.tscn" id="2_7xy6e"]
 [ext_resource type="PackedScene" uid="uid://c46dch0rc7ftj" path="res://scenes/scorer/scorer.tscn" id="4_evbuv"]
+[ext_resource type="PackedScene" uid="uid://cy8c46wtgfxf4" path="res://scenes/game_ui/game_ui.tscn" id="5_h58tx"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_f431u")
@@ -21,3 +22,7 @@ z_index = 1
 position = Vector2(0, 588)
 
 [node name="Scorer" parent="." instance=ExtResource("4_evbuv")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUI" parent="CanvasLayer" instance=ExtResource("5_h58tx")]

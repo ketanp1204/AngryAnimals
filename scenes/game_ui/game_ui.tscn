@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy8c46wtgfxf4"]
+
+[ext_resource type="LabelSettings" uid="uid://vhqd1kd3t424" path="res://assets/label_settings/lg_48_gr.tres" id="1_bqde5"]
+[ext_resource type="Script" path="res://scenes/game_ui/game_ui.gd" id="1_igl7h"]
+[ext_resource type="LabelSettings" uid="uid://dn0cdr14xb6ox" path="res://assets/label_settings/lg_96_bl.tres" id="2_4656x"]
+[ext_resource type="FontFile" uid="uid://8xm4hsm0bq16" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_8xhp1"]
+[ext_resource type="AudioStream" uid="uid://b5l5erfcqukf5" path="res://assets/audio/jazzyfrenchy.mp3" id="5_y6vfu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5srba"]
+font = ExtResource("3_8xhp1")
+font_size = 48
+font_color = Color(0, 0.407843, 0.792157, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.388235)
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_igl7h")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VB" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MC/VB"]
+layout_mode = 2
+text = "LEVEL 10"
+label_settings = ExtResource("1_bqde5")
+
+[node name="AttemptsLabel" type="Label" parent="MC/VB"]
+layout_mode = 2
+text = "ATTEMPTS 100"
+label_settings = ExtResource("1_bqde5")
+
+[node name="VB2" type="VBoxContainer" parent="MC"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MC/VB2"]
+layout_mode = 2
+text = "LEVEL COMPLETE "
+label_settings = ExtResource("2_4656x")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MC/VB2"]
+layout_mode = 2
+text = "PRESS SPACE"
+label_settings = SubResource("LabelSettings_5srba")
+horizontal_alignment = 1
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_y6vfu")
+volume_db = -80.0
+bus = &"SFX"

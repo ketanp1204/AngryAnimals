@@ -17,7 +17,6 @@ var _arrow_scale_x: float = 0.0
 var _last_collision_count: int = 0
 
 var _state: ANIMAL_STATE = ANIMAL_STATE.READY
-@onready var label = $Label
 @onready var stretch_sound = $StretchSound
 @onready var arrow = $Arrow
 @onready var launch_sound = $LaunchSound
@@ -34,8 +33,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	update(delta)
-	label.text = "%s\n" % ANIMAL_STATE.keys()[_state]
-	label.text += "%.1f,%.1f" % [_dragged_vector.x, _dragged_vector.y]
 
 
 func get_impulse() -> Vector2:
